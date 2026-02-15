@@ -23,16 +23,17 @@ jobs:
 
       - run:
           name: Run tests
-          command: npn run test
+          command: npm run test
 
       - run:
           name: Build
           command: npm run build
 
       - run:
-        name: Deploy to netlify
-        command: npm run deploy
+          name: Deploy to netlify
+          command: npm run deploy
 
 workflows:
   build_deploy:
-    jobs: -deploy
+    jobs:
+      - deploy
